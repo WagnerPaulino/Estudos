@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Aula de Objetos de Javascript</title>
-	<style type="text/css"></style>
-	<script type="text/javascript">
+<title>Aula de Objetos de Javascript</title>
+<style type="text/css"></style>
+<script type="text/javascript">
 
 		//classe
 		function Pessoa(nome, ida){
@@ -13,6 +13,10 @@
 		Pessoa.prototype.mudarIdade = function (ida){//adicionando um metodo/função à classe Pessoa
 			this.ida = ida;
 		}
+
+		
+
+		//Objetos
 		var pessoa1 = new Pessoa('Wagner',19);
 		var pessoa2 = new Pessoa('Glaucia',23);
 		alert('Pessoa 1 ->'+pessoa1.nome+' idade= '+pessoa1.ida);

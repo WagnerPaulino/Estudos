@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aula de Objetos de Javascript</title>
+<style type="text/css"></style>
+<script type="text/javascript">
+
+		//classe
+		function Pessoa(nome, ida){
+			this.nome = nome;
+			this.ida = ida;
+		}
+		Pessoa.prototype.retornarDados = function (){
+			return 'Nome: '+this.nome+', Idade: '+this.ida+', Tipo: '+this.tipo
+			+', documento: '+this.cpf;
+		}
+
+
+		function PessoaFisica(nome, ida, cpf){
+			Pessoa.call(this, nome, ida);/*faz a ligação com a classe pessoa com a
+			classe pessoaFisica*/
+			this.tipo = "Fisica"; 
+			this.cpf = cpf;
+			}
+		
+		PessoaFisica.prototype = Pessoa.prototype;
+
+		//Objetos
+		var pessoa1 = new PessoaFisica('Wagner',19);
+		var pessoa2 = new Pessoa('Glaucia',23);
+		alert('Pessoa 1 ->'+pessoa1.retornarDados());
+		alert('Pessoa 2 ->'+pessoa2.retornarDados());
+	</script>
+</head>
+<body>
+
+</body>
+</html>
