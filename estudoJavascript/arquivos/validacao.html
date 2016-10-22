@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script title="text/javascript">
+			function cump(){
+				alert("Olá, seja bem vindo")
+			}
+			function fechar(){
+				alert("tchau...");
+			}
+			function validar(){
+				if(document.cad.fnome.value == ""){
+					alert("Campo nome não pode ser vazio");
+					document.cad.fnome.focus();
+					return false;
+				}
+				if(document.cad.fsenha.value == ""){
+					alert("Campo senha não pode ser vazio");
+					document.cad.fsenha.focus();
+					return false;
+				}
+			}
+			
+		</script>
+		<style type="text/css">
+			#enviar_id:hover{color:red}
+		</style>
+	</head>
+	<body  onLoad="cump()" onUnload="fechar()">
+		<form name="cad" id="form_id" onsubmit="return validar()">
+			<label>Nome</label>
+			<input type="text" name="fnome" id="nome_id"/>
+			
+			<label>Senha</label>
+			<input type="password" name="fsenha" id="senha_id"/>
+
+			<input type="submit" value="Enviar" id="enviar_id"/>
+		</form>
+	</body>
+</html>
