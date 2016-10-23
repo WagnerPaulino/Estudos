@@ -6,16 +6,16 @@
 <script type="text/javascript">
 
 		//classe
+		//Pessoa
 		function Pessoa(nome, ida){
 			this.nome = nome;
 			this.ida = ida;
 		}
 		Pessoa.prototype.retornarDados = function (){
-			return 'Nome: '+this.nome+', Idade: '+this.ida+', Tipo: '+this.tipo
-			+', documento: '+this.cpf;
+			return 'Nome: '+this.nome+', Idade: '+this.ida;
 		}
 
-
+		//Pessoa fisica
 		function PessoaFisica(nome, ida, cpf){
 			Pessoa.call(this, nome, ida);/*faz a ligação com a classe pessoa com a
 			classe pessoaFisica*/
@@ -23,11 +23,32 @@
 			this.cpf = cpf;
 			}
 		
-		PessoaFisica.prototype = Pessoa.prototype;
+		PessoaFisica.prototype = Object.create(Pessoa.prototype);/*Criando um prototype
+		novo de pessoa para a pessoa fisica usar*/
+		PessoaFisica.prototype.constructor = PessoaFisica;/*Indica quem constroi 
+		o objeto*/ 
+		PessoaFisica.prototype.retornarDados = function(){/*reescrevendo o metodo*/
+				return Pessoa.prototype.retornarDados.call(this) 
+				+ ', tipo: '+this.tipo+', documento: '+this.cpf
+			}
 
+		//Pessoa juridica
+		function PessoaJuridica(nome, ida, cnpj){
+			Pessoa.call(this, nome, ida);
+			this.tipo = "Jurídica"; 
+			this.cnpj = cnpj;
+			}
+		
+		PessoaJuridica.prototype = Object.create(Pessoa.prototype);
+		PessoaJuridica.prototype.constructor = PessoaJuridica;
+		PessoaJuridica.prototype.retornarDados = function(){
+				return Pessoa.prototype.retornarDados.call(this) 
+				+ ', tipo: '+this.tipo+', documento: '+this.cnpj;
+			}
+		
 		//Objetos
-		var pessoa1 = new PessoaFisica('Wagner',19);
-		var pessoa2 = new Pessoa('Glaucia',23);
+		var pessoa1 = new PessoaFisica('Wagner',19, '7896549');
+		var pessoa2 = new PessoaJuridica('Glaucia',23,'789464');
 		alert('Pessoa 1 ->'+pessoa1.retornarDados());
 		alert('Pessoa 2 ->'+pessoa2.retornarDados());
 	</script>
