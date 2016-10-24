@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dicionario</title>
+<script type="text/javascript">
+var dicionario = {
+		'valor1': 89,
+		'valor2': 'Produtos',
+		
+		'valor3': {
+			'valor1':105,
+			'valor2':'teclado',
+			'valor3':6.9
+			},/*
+			este formato é geralmente usado na transferencia de 
+			dados para o servidor(JSON)
+			*/
+			'inicializa': function (){
+				alert('Dicionario inicializado');
+				}
+			
+};/*Este formato armazena qualque objeto ou função*/
+dicionario.inicializa();
+alert(dicionario.valor1);
+alert(dicionario.valor2);
+alert(dicionario.valor3.valor2);
+alert(dicionario.valor3['valor1']);
+</script>
+</head>
+<body>
+
+</body>
+</html>
