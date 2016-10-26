@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function consultarTabela(){
+	var req = new XMLHttpRequest();/*Objeto responsavel por fazer a requisão no 
+	servidor web*/
+	req.open('GET','http://#'/*exemplo de um servidor web*/,false/*o valor falso 
+			significa com estamos usando a forma sincrona de acesso*/);
+	req.send();/*Executa a requisão para o servidor web*/
+	document.getElementById('tabela').innerHTML = req.responseText;/*responseText
+	retorna os dados da requisão em forma de texto(txt)*/
+}
+/*Sincrona: Executa cada linha de comando sequencialmente*/
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" id="consulta" value="Consultar Tabela"
+			onclick="consultarTabela();" /> 
+	</form>
+	<div id="tabela"></div>
+</body>
+</html>
