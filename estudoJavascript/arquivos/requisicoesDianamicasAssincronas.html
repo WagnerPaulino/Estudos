@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function tratar(e){
+	if(e.target.readyState == 4){/*o e acessa o objeto xmlhttprequest 
+		e pega o onreadystatechange para tratar a responda do servidor*/
+		if(e.target.status == 200){/*indica que a resposta que o servidor retornou
+			é de sucesso*/
+			
+			}
+		document.getElementById('tabela').innerHTML = e.target.responseText;
+		if(e.target.status == 404){/*é status que ocorre quando o servidor 
+			não encontra um arquivo*/
+			"<p>Arquivo não encontrado<p>"	
+		}
+	}
+}
+function consultarTabela(){
+	var req = new XMLHttpRequest();
+	req.open('GET','http://#',true/*diz que é uma requisiçao assincrona*/);
+	req.onreadystatechange() = tratar;/*Informa para a função os status 
+	e que tipo de que está ocorrendo*/
+	req.send();
+}
+/*Sincrona: Executa cada linha de comando sequencialmente*/
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" id="consulta" value="Consultar Tabela"
+			onclick="consultarTabela();" />
+	</form>
+	<div id="tabela"></div>
+</body>
+</html>
