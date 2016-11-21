@@ -1,9 +1,9 @@
-package stream;
+package br.com.estudojava8.estudoJava8.stream;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Stream {
+public class StreamI {
 	public static void main(String[] args) {
 
 		// Antes do Java 8

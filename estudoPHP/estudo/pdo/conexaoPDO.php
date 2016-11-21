@@ -1,5 +1,5 @@
 <?php
-	$host = "localhost";
+$host = "localhost";
 	$user = "root";
 	$pass = "wps";
 	$dbname = "teste";

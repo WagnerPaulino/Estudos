@@ -1,7 +1,6 @@
-package lambda;
+package br.com.estudojava8.estudoJava8.lambda;
 
-public class Lambda {
-
+public class LambdaI {
 	public static void main(String[] args) {
 		System.out.println("=== Inicio do teste ===");
 		// Implementação da classe anonima Runnable

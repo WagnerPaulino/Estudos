@@ -1,4 +1,4 @@
-package lambda;
+package br.com.estudojava8.estudoJava8.lambda;
 
 public class LambdaII {
 	interface Num {

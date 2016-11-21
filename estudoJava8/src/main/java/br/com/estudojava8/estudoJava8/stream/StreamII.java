@@ -1,11 +1,10 @@
-package stream;
+package br.com.estudojava8.estudoJava8.stream;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class StreamII {
-	
 	public static void filtro(List<String> lista, Predicate<String> condicao){
 		for(String s: lista){
 			if(condicao.test(s)){
