@@ -1,4 +1,5 @@
 <?php
+
 $host = "localhost";
 	$user = "root";
 	$pass = "wps";
@@ -8,6 +9,7 @@ $host = "localhost";
 	if ($con){
 		echo "conectado com sucesso";
 	}
+	
 	}catch (PDOException $e){
 		var_dump($e);/*retorna a extrutura da variavel que contém o erro*/
 		echo $e->getMessage();/*Retorna a mensagem do erro*/
