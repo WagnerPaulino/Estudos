@@ -15,4 +15,22 @@ $host = "localhost";
 		echo $e->getMessage();/*Retorna a mensagem do erro*/
 		echo $e->getCode();/*Retorna o codigo do erro*/
 	}
+
+	$nome=$_GET["nome"];
+	$idade=$_GET["idade"];
+	$sql="insert into cliente(nome, idade) values(:nome, :idade)";
+	$busca=$con->prepare($sql);/*prepara o comando sql*/
+	$busca->bindValue(":nome",$nome);/*define os valores*/ 
+	$busca->bindValue(":idade",$idade);
+	
+	$validar=$con->prepare("select * from cliente where nome=?");
+	$validar->execute(array($nome));/*pode passar os parametro assim tambem*/
+
+	if($validar->rowCount() == 0){
+	$busca->execute();
+	echo "Cadastro efeituado";
+	}else{
+	echo "valor já existe";
+	}
+
 ?>
