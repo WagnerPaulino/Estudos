@@ -25,12 +25,13 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.glassfish/javax.faces -->
+		<!-- https://mvnrepository.com/artifact/org.wildfly.core/wildfly-server -->
 		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.faces</artifactId>
-			<version>2.2.12</version>
+			<groupId>org.wildfly.core</groupId>
+			<artifactId>wildfly-server</artifactId>
+			<version>2.1.0.Final</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
