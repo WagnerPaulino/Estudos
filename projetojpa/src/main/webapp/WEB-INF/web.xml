@@ -5,10 +5,7 @@
 	version="2.5">
 	<display-name>projetojpa</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>/main/webapp/view/pessoa/pessoaEdit.html</welcome-file>
 	</welcome-file-list>
 	<!-- Estagio do projeto "Development" ou "Production" -->
 	<context-param>

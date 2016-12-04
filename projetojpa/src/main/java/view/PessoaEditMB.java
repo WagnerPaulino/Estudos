@@ -21,10 +21,10 @@ public class PessoaEditMB extends AbstractEditPageBean<Pessoa, Long> implements 
 	private PessoaBC bc;
 	
 	public String delete() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	public String insert() {
+		setBean(new Pessoa());
 		bc.insert(getBean());
 		return null;
 	}

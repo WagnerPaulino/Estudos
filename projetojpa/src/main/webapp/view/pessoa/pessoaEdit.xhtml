@@ -5,14 +5,21 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:composite="http://java.sun.com/jsf/composite">
-<head>
-<title></title>
-</head>
-<body>
+<h:head>
+<title>Testando jsf</title>
+</h:head>
+<h:body>
 	<h:form>
+		<h:panelGroup>
 		<h:outputText value="Nome: " />
-		<p:inputText value=""></p:inputText>
+		<p:inputText value="#{pessoaEditMB.bean.nome}"></p:inputText>
+		</h:panelGroup>
 		
+		<h:panelGroup>
+		<h:outputText value="Idade: " />
+		<p:inputText value="#{pessoaEditMB.bean.nome}"></p:inputText>
+		</h:panelGroup>
+		<p:commandButton value="Salvar" action="#{pessoaEditMB.insert}"></p:commandButton>
 	</h:form>
-</body>
+</h:body>
 </html>
