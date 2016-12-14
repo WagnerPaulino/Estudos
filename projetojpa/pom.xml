@@ -56,12 +56,6 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.3.Final</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.demoiselle.jee/demoiselle-persistence-jpa -->
-		<dependency>
-			<groupId>org.demoiselle.jee</groupId>
-			<artifactId>demoiselle-persistence-jpa</artifactId>
-			<version>3.0.0-BETA2</version>
-		</dependency>
 		<!-- Hibernate JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -81,6 +75,19 @@
 			<version>2.5.1</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>3.0.19.Final</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.demoiselle.jee/demoiselle-persistence-jpa -->
+		<!-- <dependency>
+			<groupId>org.demoiselle.jee</groupId>
+			<artifactId>demoiselle-persistence-jpa</artifactId>
+			<version>3.0.0-BETA2</version>
+		</dependency> -->
 
 	</dependencies>
 </project>
