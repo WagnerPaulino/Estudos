@@ -1,4 +1,4 @@
-package domain;
+package com.sprpv.domain;
 
 import java.io.Serializable;
 
