@@ -18,11 +18,10 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
+			<artifactId>javaee-web-api</artifactId>
 			<version>7.0</version>
 		</dependency>
 		<dependency>
