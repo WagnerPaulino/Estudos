@@ -19,20 +19,6 @@
 
 		</plugins>
 	</build>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.glassfish.main</groupId>
-				<artifactId>javaee-api-parent</artifactId>
-				<version>4.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.jboss.weld.servlet</groupId>
-				<artifactId>weld-servlet-parent</artifactId>
-				<version>2.4.1.Final</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -52,6 +38,17 @@
 			<version>3.0.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>

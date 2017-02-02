@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -11,28 +10,16 @@
 </h:head>
 <body>
 	<h:form>
-		<p:growl
-			id="growl"
-			showDetail="true"
-			sticky="true" />
+		<p:growl id="growl" showDetail="true" sticky="true" />
 
 		<p:panel header="Growl">
-			<h:panelGrid
-				columns="2"
-				cellpadding="5">
-				<p:outputLabel
-					for="msg"
-					value="Message:" />
-				<p:inputText
-					id="msg"
-					value="#{growlView.message}"
-					required="true" />
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="msg" value="Message:" />
+				<p:inputText id="msg" value="#{growlView.message}" required="true" />
 			</h:panelGrid>
 
-			<p:commandButton
-				value="Save"
-				actionListener="#{growlView.saveMessage}"
-				update="growl" />
+			<p:commandButton value="Save"
+				actionListener="#{growlView.saveMessage}" update="growl" />
 		</p:panel>
 	</h:form>
 </body>
