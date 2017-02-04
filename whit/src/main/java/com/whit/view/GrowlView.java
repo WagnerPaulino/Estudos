@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
 @ManagedBean
-public class GrowlView implements Serializable{
+public class GrowlView implements Serializable {
 
 	/**
 	 * 
@@ -26,7 +26,7 @@ public class GrowlView implements Serializable{
 	public void saveMessage() {
 		FacesContext context = FacesContext.getCurrentInstance();
 
-		context.addMessage(null, new FacesMessage("Successful", "Your message: " + message));
-		context.addMessage(null, new FacesMessage("Second Message", "Additional Message Detail"));
+		context.addMessage("growl", new FacesMessage("Successful", "Your message: " + message));
+		context.addMessage("growl", new FacesMessage("Second Message", "Additional Message Detail"));
 	}
 }
