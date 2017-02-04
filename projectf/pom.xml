@@ -6,7 +6,7 @@
 	<groupId>com.projectf</groupId>
 	<artifactId>projectf</artifactId>
 	<version>0.0.1</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>projectf</name>
 	<description></description>

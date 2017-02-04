@@ -1,4 +1,4 @@
-package domain;
+package com.projectf.domain;
 
 import java.io.Serializable;
 
