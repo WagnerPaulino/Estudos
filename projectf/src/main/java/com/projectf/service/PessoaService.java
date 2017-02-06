@@ -36,4 +36,19 @@ public class PessoaService implements Serializable {
 		pessoaRepository.save(pessoa);
 	}
 
+	@Transactional
+	public void delete(Long id) {
+		pessoaRepository.delete(id);
+	}
+
+	@Transactional
+	public void update(Pessoa pessoa, Pessoa pessoaOld) {
+		pessoaOld.setNome(pessoa.getNome());
+		pessoaRepository.save(pessoaOld);
+	}
+
+	public Pessoa findOne(Long id) {
+		return pessoaRepository.findOne(id);
+	}
+
 }
