@@ -9,6 +9,6 @@ public class TesteView {
 	@RequestMapping("/")
 	public String execute() {
 		System.out.println("Executando a lógica com Spring MVC");
-		return "index.jsp";
+		return "index";
 	}
 }
