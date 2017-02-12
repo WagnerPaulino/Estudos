@@ -12,7 +12,7 @@ import com.whit.facade.MessageFacade;
 public class GrowlView extends AbstractMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	//private static final String SELECTED_PERSON = "selectedPerson";
+	// private static final String SELECTED_PERSON = "selectedPerson";
 
 	private Message message;
 
@@ -23,13 +23,11 @@ public class GrowlView extends AbstractMB implements Serializable {
 	public void createMessage() {
 		try {
 			getMessageFacade().createMessage(message);
-			closeDialog();
-			displayInfoMessageToUser("Created With Sucess");
+			addSucess(message.getMessage());
 			loadMessages();
 			resetMessage();
 		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			addFail(message.getMessage());
 			e.printStackTrace();
 		}
 	}
