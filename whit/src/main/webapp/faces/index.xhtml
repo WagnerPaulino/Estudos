@@ -10,16 +10,16 @@
 </h:head>
 <h:body>
 	<h:form>
-		<p:growl id="growl" showDetail="true" sticky="true" />
 
-		<p:panel header="Growl">
+		<p:panel>
 			<h:panelGrid columns="2" cellpadding="5">
 				<p:outputLabel for="msg" value="Message:" />
-				<p:inputText id="msg" value="#{growlView.message}" required="true" />
+				<p:inputText id="msg" value="#{growlView.message.message}"
+					required="true" />
 			</h:panelGrid>
 
 			<p:commandButton value="Save"
-				actionListener="#{growlView.saveMessage()}" update="growl" />
+				actionListener="#{growlView.createMessage()}" />
 		</p:panel>
 	</h:form>
 </h:body>
