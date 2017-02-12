@@ -1,4 +1,5 @@
 package com.whit.dao;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -61,8 +62,8 @@ abstract class GenericDAO<T> implements Serializable {
 
 	public void delete(Object id, Class<T> classe) {
 		T entityToBeRemoved = em.getReference(classe, id);
-		 
-        em.remove(entityToBeRemoved);
+
+		em.remove(entityToBeRemoved);
 	}
 
 	public T update(T entity) {
@@ -77,8 +78,6 @@ abstract class GenericDAO<T> implements Serializable {
 		return em.getReference(entityClass, entityID);
 	}
 
-	// Using the unchecked because JPA does not have a
-	// em.getCriteriaBuilder().createQuery()<T> method
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<T> findAll() {
 		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
@@ -86,8 +85,6 @@ abstract class GenericDAO<T> implements Serializable {
 		return em.createQuery(cq).getResultList();
 	}
 
-	// Using the unchecked because JPA does not have a
-	// query.getSingleResult()<T> method
 	@SuppressWarnings("unchecked")
 	protected T findOneResult(String namedQuery, Map<String, Object> parameters) {
 		T result = null;
@@ -95,7 +92,6 @@ abstract class GenericDAO<T> implements Serializable {
 		try {
 			Query query = em.createNamedQuery(namedQuery);
 
-			// Method that will populate parameters if they are passed not null and empty
 			if (parameters != null && !parameters.isEmpty()) {
 				populateQueryParameters(query, parameters);
 			}
