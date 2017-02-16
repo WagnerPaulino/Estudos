@@ -32,7 +32,7 @@ public class GrowlView extends AbstractMB implements Serializable {
 		}
 	}
 
-	public void updateMessage() {
+	public void updateMessage(Message message) {
 		try {
 			getMessageFacade().updateMessage(message);
 			closeDialog();
@@ -46,7 +46,7 @@ public class GrowlView extends AbstractMB implements Serializable {
 		}
 	}
 
-	public void deleteMessage() {
+	public void deleteMessage(Message message) {
 		try {
 			getMessageFacade().deleteMessage(message);
 			closeDialog();
