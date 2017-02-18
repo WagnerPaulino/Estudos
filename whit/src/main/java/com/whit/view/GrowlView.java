@@ -60,6 +60,10 @@ public class GrowlView extends AbstractMB implements Serializable {
 		}
 	}
 
+	public void preprarUpdate(Message message) {
+		this.message = message;
+	}
+
 	public MessageFacade getMessageFacade() {
 		if (messageFacade == null) {
 			messageFacade = new MessageFacade();

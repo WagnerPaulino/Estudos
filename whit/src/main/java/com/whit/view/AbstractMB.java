@@ -1,6 +1,7 @@
 package com.whit.view;
 
 import javax.faces.context.FacesContext;
+import javax.faces.context.PartialViewContext;
 import javax.faces.application.FacesMessage;
 import org.primefaces.context.RequestContext;
 
@@ -40,9 +41,15 @@ public class AbstractMB {
 
 		context.addMessage(null, new FacesMessage("Successful", "Message " + message + " adicionada com sucesso"));
 	}
+
 	public void addFail(String message) {
 		FacesContext context = FacesContext.getCurrentInstance();
 
 		context.addMessage(null, new FacesMessage("Erro", "Message " + message + " Não foi adicionada"));
+	}
+
+	public void updateComponent(String componente) {
+		PartialViewContext pvc = FacesContext.getCurrentInstance().getPartialViewContext();
+		pvc.getRenderIds().add(componente);
 	}
 }
