@@ -19,9 +19,9 @@
 			</h:panelGrid>
 
 			<p:commandButton value="Save"
-				actionListener="#{growlView.createMessage()}" update="growl" />
+				actionListener="#{growlView.createMessage()}" update="@form" />
 		</p:panel>
 	</h:form>
-	<p:commandButton action="/faces/list.xhtml" value="listagem"></p:commandButton>
+	<p:commandButton action="/faces/list.xhtml" value="listagem" process="@this"></p:commandButton>
 </h:body>
 </html>
