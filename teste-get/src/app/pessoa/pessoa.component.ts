@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pessoa } from './pessoa';
+import { PessoaService } from './pessoa.service';
 
 @Component({
   selector: 'app-pessoa',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PessoaComponent implements OnInit {
 
 private pessoas: Pessoa[] = [];
+
 
   constructor(private pessoaService: PessoaService){ }
 
@@ -23,7 +26,7 @@ private pessoas: Pessoa[] = [];
       this.pessoaService.deletePessoa(pessoa.id)
       .subscribe(null, err=> {
         alert("Não foi possivel deletar");
-        this.pessoas.splice(index, o, pessoa);
+        this.pessoas.splice(index, 0, pessoa);
         });
     }
   }

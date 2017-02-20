@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PessoaComponent } from './pessoa/pessoa.component'
 import { PessoaModule } from './pessoa/pessoa.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PessoaComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +18,7 @@ import { PessoaModule } from './pessoa/pessoa.module';
     HttpModule,
     PessoaModule
   ],
-  providers: [],
+  providers: [ PessoaModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
