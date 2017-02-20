@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PessoaComponent } from './pessoa/pessoa.component'
-import { PessoaModule } from './pessoa/pessoa.module';
+import { PessoaService } from './pessoa/pessoa.service'
 
 @NgModule({
   declarations: [
@@ -15,10 +15,9 @@ import { PessoaModule } from './pessoa/pessoa.module';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    PessoaModule
+    HttpModule
   ],
-  providers: [ PessoaModule ],
+  providers: [ PessoaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
