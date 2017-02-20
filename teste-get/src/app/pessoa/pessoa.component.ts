@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from './pessoa';
 import { PessoaService } from './pessoa.service';
+import { ITdDataTableColumn } from '@covalent/core'
 
 @Component({
   selector: 'app-pessoa',
@@ -14,7 +15,7 @@ export class PessoaComponent implements OnInit {
 
   constructor(private pessoaService: PessoaService) {
     this.pessoaService.getPessoas()
-    .subscribe(data => this.pessoas = data);
+      .subscribe(data => this.pessoas = data);
   }
 
   ngOnInit() {
@@ -32,4 +33,10 @@ export class PessoaComponent implements OnInit {
         });
     }
   }
+
+  private columns: ITdDataTableColumn[] = [
+    { name: 'id', label: 'id ' },
+    { name: 'nome', label: 'nome' },
+  ];
+
 }

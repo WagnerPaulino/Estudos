@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PessoaComponent } from './pessoa/pessoa.component'
 import { PessoaService } from './pessoa/pessoa.service'
 import { MaterialModule } from '@angular/material'
-import { CovalentCoreModule, CovalentLayoutModule } from '@covalent/core'
+import { CovalentCoreModule, CovalentLayoutModule, CovalentDataTableModule } from '@covalent/core'
 
 @NgModule({
   declarations: [
@@ -20,9 +20,10 @@ import { CovalentCoreModule, CovalentLayoutModule } from '@covalent/core'
     HttpModule,
     MaterialModule.forRoot(),
     CovalentCoreModule.forRoot(),
-    CovalentLayoutModule.forRoot()
+    CovalentLayoutModule.forRoot(),
+    CovalentDataTableModule.forRoot()
   ],
-  providers: [ PessoaService ],
+  providers: [PessoaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
