@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PessoaComponent } from './pessoa/pessoa.component'
 import { PessoaService } from './pessoa/pessoa.service'
+import { MaterialModule } from '@angular/material'
+import { CovalentCoreModule, CovalentLayoutModule } from '@covalent/core'
 
 @NgModule({
   declarations: [
@@ -15,7 +17,10 @@ import { PessoaService } from './pessoa/pessoa.service'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot(),
+    CovalentCoreModule.forRoot(),
+    CovalentLayoutModule.forRoot()
   ],
   providers: [ PessoaService ],
   bootstrap: [AppComponent]
