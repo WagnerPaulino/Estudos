@@ -1,1 +1,18 @@
 <p>pessoa works!</p>
+<table td-data-table>
+  <th td-data-table-column>
+    <span>Id</span>
+
+    <td td-data-table-cell *ngFor="let pessoa of pessoa">{{pessoa.id}}
+    </td>
+
+  </th>
+  <th td-data-table-column
+      *ngFor="let pessoa of pessoa">
+    {{pessoa.id}}
+  </th>
+  <tr td-data-table-row>
+    <td td-data-table-cell *ngFor="let pessoa of pessoa">{{pessoa.nome}}
+    </td>
+  </tr>
+</table>
