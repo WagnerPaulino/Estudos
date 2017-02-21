@@ -44,6 +44,7 @@ public class PessoaService implements Serializable {
 	@Transactional
 	public void update(Pessoa pessoa, Pessoa pessoaOld) {
 		pessoaOld.setNome(pessoa.getNome());
+		pessoaOld.setTipo(pessoa.getTipo());
 		pessoaRepository.save(pessoaOld);
 	}
 

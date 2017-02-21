@@ -35,8 +35,8 @@ export class PessoaComponent implements OnInit {
   }
 
   private columns: ITdDataTableColumn[] = [
-    { name: 'id', label: 'id ' },
-    { name: 'nome', label: 'nome' },
+    { name: 'nome', label: 'Nome' },
+    { name: 'tipo', label: 'Tipo'}
   ];
 
 }

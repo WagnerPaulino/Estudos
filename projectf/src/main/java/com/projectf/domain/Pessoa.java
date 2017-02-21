@@ -24,6 +24,9 @@ public class Pessoa implements Serializable {
 
 	@Column
 	private String nome;
+	
+	@Column
+	private String tipo;
 
 	public Long getId() {
 		return id;
@@ -40,6 +43,14 @@ public class Pessoa implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public String getTipo(){
+		return tipo;
+	}
+	
+	public void setTipo(String tipo){
+		this.tipo = tipo;
+	}
 
 	@Override
 	public int hashCode() {
@@ -47,6 +58,7 @@ public class Pessoa implements Serializable {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
 
@@ -69,12 +81,14 @@ public class Pessoa implements Serializable {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
+		if (tipo == null) {
+			if (other.tipo != null)
+				return false;
+		} else if (!tipo.equals(other.tipo))
+			return false;
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + "]";
-	}
+	
 
 }
