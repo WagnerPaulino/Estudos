@@ -12,7 +12,7 @@ import com.whit.facade.MessageFacade;
 public class GrowlView extends AbstractMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	// private static final String SELECTED_PERSON = "selectedPerson";
+	
 
 	private Message message;
 
