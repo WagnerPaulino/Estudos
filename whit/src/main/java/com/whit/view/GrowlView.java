@@ -5,10 +5,13 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 import com.whit.domain.Message;
 import com.whit.facade.MessageFacade;
 
 @ManagedBean
+@ViewScoped
 public class GrowlView extends AbstractMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 
