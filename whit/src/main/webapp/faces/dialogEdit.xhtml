@@ -16,7 +16,7 @@
 			</p:panelGrid>
 			<p:commandButton
 				action="#{growlView.updateMessage(growlView.message)}"
-				value="Atualizar" onclick="PF('dialog').hide();" update=":listForm:grid" actionListener="#{growlView.updateComponent('dialog')}"></p:commandButton>
+				value="Atualizar" onclick="PF('dialog').hide();" update=":listForm:grid, dialog" ></p:commandButton>
 		</p:dialog>
 	</h:form>
 
