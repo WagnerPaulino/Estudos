@@ -10,7 +10,7 @@
 </h:head>
 <body>
 
-	<h:form>
+	<h:form id="listForm">
 		<p:dataGrid value="#{growlView.allMessages}" var="bean" id="grid">
 			<p:panelGrid columns="4">
 				<h:outputText value="Messagem:" />
@@ -24,5 +24,6 @@
 
 		<ui:include src="/faces/dialogEdit.xhtml" />
 	</h:form>
+	<p:commandButton value="Voltar" action="/faces/index.xhtml" process="@this"></p:commandButton>
 </body>
 </html>

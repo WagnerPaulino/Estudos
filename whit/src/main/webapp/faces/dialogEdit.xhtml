@@ -9,14 +9,14 @@
 
 	<h:form>
 		<p:dialog widgetVar="dialog" header="Effects" showEffect="explode"
-			hideEffect="bounce" height="100">
+			hideEffect="bounce" height="100" id="dialog">
 			<p:panelGrid columns="2">
 				<h:outputText value="Message" />
 				<p:inputText value="#{growlView.message.message}"></p:inputText>
 			</p:panelGrid>
 			<p:commandButton
 				action="#{growlView.updateMessage(growlView.message)}"
-				value="Atualizar" onclick="PF('dialog').hide();"></p:commandButton>
+				value="Atualizar" onclick="PF('dialog').hide();" update=":listForm:grid" actionListener="#{growlView.updateComponent('dialog')}"></p:commandButton>
 		</p:dialog>
 	</h:form>
 
