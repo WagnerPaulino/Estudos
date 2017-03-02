@@ -30,7 +30,7 @@ public class PessoaRest {
 	@RequestMapping(method = RequestMethod.POST, path = "/api/pessoas")
 	public ResponseEntity<?> insert(@RequestBody Pessoa pessoa) {
 		pessoaService.insert(pessoa);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.ok(pessoa);
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, path = "/api/pessoas/{id}")
