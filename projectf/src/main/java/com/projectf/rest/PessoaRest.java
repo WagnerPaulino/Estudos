@@ -3,6 +3,7 @@ package com.projectf.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.info.ProjectInfoProperties.Build;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,9 +29,9 @@ public class PessoaRest {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, path = "/api/pessoas")
-	public ResponseEntity<?> insert(@RequestBody Pessoa pessoa) {
-		pessoaService.insert(pessoa);
-		return ResponseEntity.ok(pessoa);
+	public Pessoa insert(@RequestBody Pessoa pessoa) {
+		pessoaService.insert(pessoa);ResponseEntity.ok().build();
+		return pessoa;
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, path = "/api/pessoas/{id}")

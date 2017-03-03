@@ -34,6 +34,7 @@ public class PessoaService implements Serializable {
 	@Transactional
 	public Pessoa insert(Pessoa pessoa) {
 		return pessoaRepository.save(pessoa);
+		
 	}
 
 	@Transactional
