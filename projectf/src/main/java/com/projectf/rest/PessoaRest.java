@@ -15,12 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projectf.domain.Pessoa;
 import com.projectf.service.PessoaService;
 
-@CrossOrigin
 @RestController
 public class PessoaRest {
 
 	@Autowired
 	private PessoaService pessoaService;
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/api/pessoas/{id}")
+	public ResponseEntity<?> load(@PathVariable("id") Long id) {
+		Pessoa pessoa = pessoaService.findOne(id);
+		return ResponseEntity.ok(pessoa);
+	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/api/pessoas")
 	public ResponseEntity<?> findAll() {
