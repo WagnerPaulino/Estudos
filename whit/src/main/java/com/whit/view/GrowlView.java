@@ -15,8 +15,6 @@ import com.whit.facade.MessageFacade;
 public class GrowlView extends AbstractMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	
-
 	private Message message;
 
 	private List<Message> messages;
@@ -32,19 +30,16 @@ public class GrowlView extends AbstractMB implements Serializable {
 		} catch (Exception e) {
 			addFail(message.getMessage());
 			e.printStackTrace();
+			resetMessage();
 		}
 	}
 
 	public void updateMessage(Message message) {
 		try {
 			getMessageFacade().updateMessage(message);
-			closeDialog();
-			displayInfoMessageToUser("Updated With Sucess");
 			loadMessages();
 			resetMessage();
 		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
 			e.printStackTrace();
 		}
 	}
@@ -52,19 +47,16 @@ public class GrowlView extends AbstractMB implements Serializable {
 	public void deleteMessage(Message message) {
 		try {
 			getMessageFacade().deleteMessage(message);
-			closeDialog();
-			displayInfoMessageToUser("Deleted With Sucess");
 			loadMessages();
 			resetMessage();
 		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
 			e.printStackTrace();
 		}
 	}
 
-	public void preprarUpdate(Message message) {
+	public Message preprarUpdate(Message message) {
 		this.message = message;
+		return this.message;
 	}
 
 	public MessageFacade getMessageFacade() {
