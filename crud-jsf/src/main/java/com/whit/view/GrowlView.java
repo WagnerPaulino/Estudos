@@ -54,9 +54,9 @@ public class GrowlView extends AbstractMB implements Serializable {
 		}
 	}
 
-	public Message preprarUpdate(Message message) {
+	public String preprarUpdate(Message message) {
 		this.message = message;
-		return this.message;
+		return ":dialog";
 	}
 
 	public MessageFacade getMessageFacade() {
