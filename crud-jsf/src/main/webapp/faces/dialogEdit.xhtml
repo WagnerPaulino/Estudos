@@ -15,7 +15,7 @@
 				<p:inputText value="#{growlView.message.message}"></p:inputText>
 			</p:panelGrid>
 			<p:commandButton
-				action="#{growlView.updateMessage(growlView.message)}"
+				action="#{growlView.save()}"
 				value="Atualizar" onclick="PF('dialog').hide();" update=":listForm:grid, dialog" ></p:commandButton>
 		</p:dialog>
 	</h:form>

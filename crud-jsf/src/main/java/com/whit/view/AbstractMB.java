@@ -39,13 +39,13 @@ public class AbstractMB {
 	public void addSucess(String message) {
 		FacesContext context = FacesContext.getCurrentInstance();
 
-		context.addMessage(null, new FacesMessage("Successful", "Message " + message + " adicionada com sucesso"));
+		context.addMessage(null, new FacesMessage("Successful", "Message " + message + " salvada com sucesso"));
 	}
 
 	public void addFail(String message) {
 		FacesContext context = FacesContext.getCurrentInstance();
 
-		context.addMessage(null, new FacesMessage("Erro", "Message " + message + " Não foi adicionada"));
+		context.addMessage(null, new FacesMessage("Erro", "Message " + message + " Não foi salvada!"));
 	}
 
 	public void updateComponent(String componente) {

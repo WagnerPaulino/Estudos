@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-
 import com.whit.domain.Message;
 import com.whit.facade.MessageFacade;
 
@@ -21,7 +20,15 @@ public class GrowlView extends AbstractMB implements Serializable {
 
 	private MessageFacade messageFacade;
 
-	public void createMessage() {
+	public void save() {
+		if (message.getId() == (null)) {
+			createMessage();
+		} else {
+			updateMessage(message);
+		}
+	}
+
+	private void createMessage() {
 		try {
 			getMessageFacade().createMessage(message);
 			addSucess(message.getMessage());
@@ -34,12 +41,14 @@ public class GrowlView extends AbstractMB implements Serializable {
 		}
 	}
 
-	public void updateMessage(Message message) {
+	private void updateMessage(Message message) {
 		try {
 			getMessageFacade().updateMessage(message);
+			addSucess(message.getMessage());
 			loadMessages();
 			resetMessage();
 		} catch (Exception e) {
+			addFail(message.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -55,7 +64,7 @@ public class GrowlView extends AbstractMB implements Serializable {
 	}
 
 	public String preprarUpdate(Message message) {
-		this.message = message;
+		this.message = messageFacade.findMessage(message.getId());
 		return ":dialog";
 	}
 
