@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.inject.Inject;
+
 import com.whit.domain.Message;
 import com.whit.facade.MessageFacade;
 
@@ -13,7 +15,8 @@ import com.whit.facade.MessageFacade;
 @ViewScoped
 public class GrowlView extends AbstractMB implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
+	@Inject
 	private Message message;
 
 	private List<Message> messages;
