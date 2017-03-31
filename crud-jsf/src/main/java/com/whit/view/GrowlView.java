@@ -80,10 +80,6 @@ public class GrowlView extends AbstractMB implements Serializable {
 	}
 
 	public Message getMessage() {
-		if (message == null) {
-			message = new Message();
-		}
-
 		return message;
 	}
 
