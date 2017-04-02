@@ -11,20 +11,20 @@
 <body>
 
 	<h:form id="listForm">
-	<p:growl id="growl" showDetail="true" sticky="true" autoUpdate="true"/>
+		<p:growl id="growl" showDetail="true" sticky="true" autoUpdate="true" />
 		<p:dataGrid value="#{growlView.allMessages}" var="bean" id="grid">
 			<p:panelGrid columns="4">
 				<h:outputText value="Messagem:" />
 				<h:outputText value="#{bean.message}" />
-				<p:commandButton value="Alterar" onclick="PF('dialog').show();"
-					action="#{growlView.preprarUpdate(bean)}"></p:commandButton>
+				<p:commandButton value="Alterar" oncomplete="PF('dialog').show();"
+					action="#{growlView.preprarUpdate(bean)}" update=":formUpdate:dialog"></p:commandButton>
 				<p:commandButton value="Excluir"
 					action="#{growlView.deleteMessage(bean)}" update="grid"></p:commandButton>
 			</p:panelGrid>
 		</p:dataGrid>
-
 	</h:form>
 	<ui:include src="/faces/dialogEdit.xhtml" />
-	<p:commandButton value="Voltar" action="/faces/index.xhtml" process="@this"></p:commandButton>
+	<p:commandButton value="Voltar" action="/faces/index.xhtml"
+		process="@this"></p:commandButton>
 </body>
 </html>

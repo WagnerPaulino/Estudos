@@ -7,7 +7,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-
 import com.whit.domain.Message;
 import com.whit.facade.MessageFacade;
 
@@ -66,9 +65,9 @@ public class GrowlView extends AbstractMB implements Serializable {
 		}
 	}
 
-	public String preprarUpdate(Message message) {
-		this.message = messageFacade.findMessage(message.getId());
-		return ":dialog";
+	public Message preprarUpdate(Message message) {
+		this.message = getMessageFacade().findMessage(message.getId());
+		return this.message;
 	}
 
 	public MessageFacade getMessageFacade() {
