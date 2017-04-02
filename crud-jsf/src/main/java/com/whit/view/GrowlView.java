@@ -34,12 +34,12 @@ public class GrowlView extends AbstractMB implements Serializable {
 		try {
 			getMessageFacade().createMessage(message);
 			addSucess(message.getMessage());
-			loadMessages();
-			resetMessage();
 		} catch (Exception e) {
 			addFail(message.getMessage());
 			e.printStackTrace();
-			resetMessage();
+		}finally {
+			resetMessage();			
+			loadMessages();
 		}
 	}
 
@@ -47,21 +47,23 @@ public class GrowlView extends AbstractMB implements Serializable {
 		try {
 			getMessageFacade().updateMessage(message);
 			addSucess(message.getMessage());
-			loadMessages();
-			resetMessage();
 		} catch (Exception e) {
 			addFail(message.getMessage());
 			e.printStackTrace();
+		}finally {
+			resetMessage();			
+			loadMessages();
 		}
 	}
 
 	public void deleteMessage(Message message) {
 		try {
 			getMessageFacade().deleteMessage(message);
-			loadMessages();
-			resetMessage();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			resetMessage();			
+			loadMessages();
 		}
 	}
 
