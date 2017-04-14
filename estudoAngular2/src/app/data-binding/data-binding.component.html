@@ -1,0 +1,84 @@
+<!--<section class="property-binding">
+  <article>
+      <h3>Interpolation / Interpolação</h3>
+      <p>renderizada com interpolação {{ url }}</p>
+  </article>
+  <article>
+    <h3>Class e Style binding</h3>
+    <div>
+      Selecione uma Classe:
+      <select #classe (change)="0">
+        <option value="alert-sucess">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger"> Erro</option>
+      </select>
+      <br/>
+      <div class="alert" role="alert" [class.alert-sucess]="classe.value == 'alert-sucess'">
+        Sucesso
+      </div>
+
+      <div class="alert" role="alert" [class.alert-infor]="classe.value == 'alert-info'">
+        Info
+      </div>
+
+      <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+        Warning
+      </div>
+      
+      <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+        Erro
+      </div>
+
+      <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+        Essa mensagem só aparece em caso de erro
+      </div>
+    </div>
+  </article>
+</section>
+
+
+<section>
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="onClick()">Me clique!</button><!--(click)='onClick()' é um event binding-->
+   <!--   <br/><br/>
+      <input type="text" (keyup)="onKeyup($event)" (Keyup.enter)="onSave(campo.value)" (blur)="onSave(campo.value)" #campo/>
+
+       <div>Conteudo Atual: {{ conteudoAtual }}</div>
+       <div>Conteudo Salvo: {{ conteudoSalvo }}</div>
+          <br/><br/>
+
+        <span (mouseover)="OnMouseSpan()" (mouseout)="OnMouseSpan()" [class.highlight]="isMouseOver">
+          Passe o mouse aqui!
+        </span>
+    </div>
+  </article>
+</section>
+
+
+
+<section class="two-way-binding">
+  <article>
+    <h3>two-way-binding</h3>
+    <div>
+      <input type="text" [value]=nome (input)="nome = $event.target.value"/><!-- '[value]=nomepropertie binding//todos os eventos html podem enviar o $event com o conteudo-->
+     <!-- <input type="text" [(ngModel)]=nome /><!--Ou bindon-ngModel='nome'-->
+     <!-- <p>Você digitou {{ nome }}</p>
+    </div>
+
+    <div>
+      <input type="text" [(ngModel)]=pessoa.nome />
+      <input type="text" [(ngModel)]=pessoa.idade />
+      <p>a pessoa é {{ pessoa.nome }} com idade {{ pessoa.idade }}</p>
+    </div>
+  </article>
+</section>-->
+
+<section>
+  <article>
+    <h3>Input/Output Properties</h3>
+    <inputs [nome]="nome"></inputs>
+  </article>
+</section>
