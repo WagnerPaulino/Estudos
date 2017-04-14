@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { InputPropertyComponent } from './input-property.component'
 
 @Component({
   selector: 'app-data-binding',
@@ -7,6 +6,13 @@ import { InputPropertyComponent } from './input-property.component'
   styleUrls: ['data-binding.component.css']
 })
 export class DataBindingComponent{
+  
+  pessoa: any = {
+    nome: 'Wagner',
+    idade: 35
+  }
+  
+  public nome: string = "olá... eu estou aqui...kkkk";
 
   constructor() { }
 
@@ -15,6 +21,12 @@ export class DataBindingComponent{
   conteudoAtual: string = '';
   conteudoSalvo: string = '';
   isMouseOver = false;
+
+  valorInicial : number = 10;
+
+  onValorMudou(event){
+    alert(event.novoValor);
+  }
 
 
   onClick(){
@@ -36,8 +48,6 @@ export class DataBindingComponent{
 
  
  
-  pessoa = {nome: '', idade: ''};
-  nome: string = "olá... eu estou aqui...kkkk";
 
 
 

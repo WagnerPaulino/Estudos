@@ -7,19 +7,18 @@ import { AppComponent } from './app.component';
 import { CursosComponent } from './cursos/cursos.component';
 import {CursosModule} from './cursos/cursos.module';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { InputPropertyComponent } from "app/data-binding/input-property.component";
+import { DataBindingModule } from "app/data-binding/data-binding.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DataBindingComponent,
-    InputPropertyComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    CursosModule
+    CursosModule,
+    DataBindingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
