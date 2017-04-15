@@ -11,8 +11,8 @@ public class LambdaI {
 			}
 		};
 		Runnable r2 = ()// Lista de argumentos
-		-> // Seta: Forma de indicar que estamos trabalhando com uma expressão
-			// lambda
+		-> /**Seta: Forma de indicar que estamos trabalhando com uma expressão
+			 *lambda*/ 
 		System.out.println("Estudando a expressão lambda 2.");// Corpo
 
 		r1.run();
