@@ -1,23 +1,14 @@
 package br.com.estudojava8.estudoJava8.exercicio;
 
-import javax.swing.JOptionPane;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ExercicioLambda {
-		
-	static int num;
 	
 	public static void main(String[] args) {
+		Stream<Integer> lista = Stream.of(1,5,4,9,1,5,6,7);
+        lista.filter(n -> (n%2 == 0)).map(map -> Integer.valueOf(map)).collect(Collectors.toList()).forEach(System.out::println);
+        
 		
-		do{
-			num = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira um numero"));
-			if(num >10){
-				for(int i =0;i <num; i++ ){
-					int y = i;
-					Runnable run = () -> System.out.println(y*num+90);
-					run.run();
-				}
-			}
-		}while(num != 0);
-	
 	}
 }
