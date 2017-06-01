@@ -8,10 +8,15 @@ import { CursosComponent } from './cursos/cursos.component';
 import {CursosModule} from './cursos/cursos.module';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DataBindingModule } from "app/data-binding/data-binding.module";
+import { ExemploNGTemplateComponent } from './exemplo-ngtemplate/exemplo-ngtemplate.component';
+import { ExemploDirectiveDirective } from "shared/exemplo-directive.directive";
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExemploNGTemplateComponent,
+    ExemploDirectiveDirective
   ],
   imports: [
     BrowserModule,
