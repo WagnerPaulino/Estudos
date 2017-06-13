@@ -2,3 +2,4 @@
 /dist/
 /.project
 /.editorconfig
+/package-lock.json
