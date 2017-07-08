@@ -1,0 +1,17 @@
+<h1>Não usar esses exemplo em projetos reais!</h1>
+<input type="text" [(ngModel)]="filtro">
+<br>
+<input type="text" #novoValor>
+<button (click)="addCurso(novoValor.value)">Inserir Curso</button>
+<h1>Pipe Puro</h1>
+<ul>
+  <li *ngFor="let item of livros | filtroArray:filtro">
+    {{item}}
+  </li>
+</ul>
+<h1>Pipe Impuro</h1>
+<ul>
+  <li *ngFor="let item of livros | filtroArrayImpuro:filtro">
+    {{item}}
+  </li>
+</ul>

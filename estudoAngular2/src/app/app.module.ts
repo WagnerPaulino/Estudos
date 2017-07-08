@@ -10,13 +10,19 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DataBindingModule } from "app/data-binding/data-binding.module";
 import { ExemploNGTemplateComponent } from './exemplo-ngtemplate/exemplo-ngtemplate.component';
 import { ExemploDirectiveDirective } from "shared/exemplo-directive.directive";
+import { PipesComponent } from './pipes/pipes/pipes.component';
+import { FiltroArrayPipe } from './pipes/filtro-array.pipe';
+import { FiltroArrayImpuroPipe } from './pipes/filtro-array-impuro.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ExemploNGTemplateComponent,
-    ExemploDirectiveDirective
+    ExemploDirectiveDirective,
+    PipesComponent,
+    FiltroArrayPipe,
+    FiltroArrayImpuroPipe
   ],
   imports: [
     BrowserModule,
