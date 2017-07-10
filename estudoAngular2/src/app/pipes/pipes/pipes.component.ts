@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PipesComponent implements OnInit {
   livros: string[] = ['Java','Angular', 'Python'];
   filtro: string;
+
+  valorAsync = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve('Valor assincrono'), 2000)
+  });
+
   constructor() { }
 
   ngOnInit() {
