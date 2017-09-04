@@ -1,47 +1,56 @@
 package com.whit.domain;
 
 import java.io.Serializable;
-
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "message")
-public class Message implements Serializable {
-
+@Table(name = "pessoa")
+public class Pessoa implements Serializable{
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@Column(unique=true)
-	private String message;
+	private String nome;
 	
-	@ManyToOne
-	private Pessoa pessoa;
+	@Column
+	private int idade;
+	
+	@OneToMany
+	private List<Message> message;
 
-	public Long getId() {
-		return id;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getMessage() {
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public List<Message> getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
+	public void setMessage(List<Message> message) {
 		this.message = message;
 	}
 
@@ -49,8 +58,9 @@ public class Message implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + idade;
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -62,18 +72,21 @@ public class Message implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Message other = (Message) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		Pessoa other = (Pessoa) obj;
+		if (idade != other.idade)
 			return false;
 		if (message == null) {
 			if (other.message != null)
 				return false;
 		} else if (!message.equals(other.message))
 			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
 		return true;
 	}
-
+	
 }
+	
