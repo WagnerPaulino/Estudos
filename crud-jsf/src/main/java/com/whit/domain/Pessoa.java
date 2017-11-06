@@ -22,20 +22,23 @@ public class Pessoa implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	@Column
 	private String nome;
 	
 	@Column
 	private int idade;
 	
-	@OneToMany
+	@OneToMany(mappedBy="pessoa")
 	private List<Message> message;
 
-	public String getNome() {
-		return nome;
+	public Long getId() {
+		return id;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public int getIdade() {
@@ -54,39 +57,16 @@ public class Pessoa implements Serializable{
 		this.message = message;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idade;
-		result = prime * result + ((message == null) ? 0 : message.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		return result;
+	public String getNome() {
+		return nome;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pessoa other = (Pessoa) obj;
-		if (idade != other.idade)
-			return false;
-		if (message == null) {
-			if (other.message != null)
-				return false;
-		} else if (!message.equals(other.message))
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		return true;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
+	
+
+	
 	
 }
 	

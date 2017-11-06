@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +27,7 @@ public class Message implements Serializable {
 	@Column(unique=true)
 	private String message;
 	
-	@ManyToOne
+	@ManyToOne()
 	private Pessoa pessoa;
 
 	public Long getId() {
@@ -43,6 +44,14 @@ public class Message implements Serializable {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
 	@Override

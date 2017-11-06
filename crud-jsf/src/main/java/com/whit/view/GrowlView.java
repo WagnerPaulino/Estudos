@@ -15,8 +15,7 @@ import com.whit.facade.MessageFacade;
 public class GrowlView extends AbstractMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Inject
-	private Message message;
+	private Message message = new Message();
 
 	private List<Message> messages;
 
@@ -81,6 +80,9 @@ public class GrowlView extends AbstractMB implements Serializable {
 	}
 
 	public Message getMessage() {
+		if(message == null){
+			return new Message();
+		}
 		return message;
 	}
 
@@ -101,6 +103,6 @@ public class GrowlView extends AbstractMB implements Serializable {
 	}
 
 	public void resetMessage() {
-		message = new Message();
+		this.message = new Message();
 	}
 }
