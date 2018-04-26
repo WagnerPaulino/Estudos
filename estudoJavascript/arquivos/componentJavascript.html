@@ -6,39 +6,57 @@
 </head>
 <body>
 	<data-list></data-list><!--<ul data-list></ul>-->
+	<data-list></data-list><!--<ul data-list></ul>-->
+	<input type="text" name="cid" placeholder="Usuario Id">
+	<input type="text" name="cname" placeholder="Usuario Name">
+	<button onclick="add('cid','cname')">Adicionar</button>
 </body>
 	<script type="application/javascript">
-			const data = [
-			 {
-			  name: 'João',
-			  id: '1'
-			 },
-			 {
-			  name: 'Manuel',
-			  id: '2'
-			 },
-			 {
-			  name: 'Pedro',
-			  id: '3'
-			 },
-			 {
-			  name: 'José',
-			  id: '4'
-			 }
-			];
-			const listComponent = (data) => {
-			 return data.map((item) => {
-			  return (
-			   `
-			   <li>
-			    <span>${ item.id }</span>
-			    <span>${ item.name }</span>
-			   </li>
-			   `
-			  )
-			 }).join('');
-			};
-			const el = document.querySelector('data-list');//const el = document.querySelector('[data-list]');
-			el.innerHTML = listComponent(data);
+		const data = [
+		 {
+		  name: 'João',
+		  id: '1'
+		 },
+		 {
+		  name: 'Manuel',
+		  id: '2'
+		 },
+		 {
+		  name: 'Pedro',
+		  id: '3'
+		 },
+		 {
+		  name: 'José',
+		  id: '4'
+		 }
+		];
+		const listComponent = (data) => {
+		 return data.map((item) => {
+		  return (
+		   `
+		   <li>
+		    <span>${ item.id }</span>
+		    <span>${ item.name }</span>
+		   </li>
+		   `
+		  )
+		 }).join('');
+		};
+		const el = document.querySelectorAll('data-list');//const el = document.querySelector('[data-list]');
+		for(i =0;i<el.length;i++){
+			el[i].innerHTML = listComponent(data);
+		}
+		function add(id,nome){
+			vid = document.getElementsByName(id)[0].value;
+			vnome = document.getElementsByName(nome)[0].value;
+			console.log(vnome);
+			console.log(vid);
+			data.push({name: vnome, id: vid})
+			console.log(data);
+			const el = document.querySelectorAll('data-list');//const el = document.querySelector('[data-list]');
+			for(i =0;i<el.length;i++){
+				el[i].innerHTML = listComponent(data);
+			}
+		}
 	</script>
 </html>
